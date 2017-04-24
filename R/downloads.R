@@ -287,13 +287,13 @@
   return(data)
 }
 
-.arnold.2016 <- function(...){
+.arnold.2017 <- function(...){
   data <- read.xls(ft_get_si("10.5061/dryad.t3d52", "Arnold_etal_2016_functecol_dataset.xlsx"), as.is = TRUE, skip = 3)
   species <- rep(c("Tribolium_castaneum"), nrow(data))
   data <- data.frame(species, data)
   metadata <- data[,c(2:7,24:25)]
   data <- data[,-c(2:7,23:25)]
-  units <- c("µLCO2/h", "counts/h", "mg", rep("mm",7), rep("mm/s",2), rep(NA,7), "days", rep(NA,3))
+  units <- c("μl_CO2/h", "counts/h", "mg", rep("mm",7), rep("mm/s",2), rep(NA,7), "days", rep(NA,3))
   data <- .df.melt(data, "species", units, metadata)
   return(data)
 }
@@ -1175,7 +1175,7 @@
   data$genus_species <- tolower(data$genus_species)
   metadata <- data[,c(2:4)]
   data <- data[,-c(2:4)]
-  units <- c(rep("J/m^-2",4), "g", "μm", "μm", "abundance", "m", "density", "abundance", NA, NA, NA)
+  units <- c(rep("J/m^2",4), "g", "μm", "μm", "abundance", "m", "density", "abundance", NA, NA, NA)
   data <- .df.melt(data, "genus_species", units, metadata)
   return(data)
 }
@@ -1186,7 +1186,7 @@
   data$Species <- tolower(gsub(" ", "_", data$Species, ignore.case = TRUE))
   metadata <- data[,c(2:3)]
   data <- data[,-c(2:3)]
-  units <- c(rep("mm",3), "mm^3", rep("mm",3), rep("J/m^-2",2), "%", "%", "abundance", "m", "abundance", "density", NA, NA)
+  units <- c(rep("mm",3), "mm^3", rep("mm",3), rep("J/m^2",2), "%", "%", "abundance", "m", "abundance", "density", NA, NA)
   data <- .df.melt(data, "Species", units, metadata)
   return(data)
 }
