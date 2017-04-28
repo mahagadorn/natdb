@@ -1253,18 +1253,18 @@
 #   data$Species <- tolower(gsub(" ", "_", data$Species, ignore.case = TRUE))
 #   metadata <- data[,c(2:4)]
 #   data <- data[,-c(2:4)]
-#   units <- c("cm^2", "gr/m^2", rep("N/mm^2",2), "NA", "latitude", "longitude")
+#   units <- c("cm^2", "g/m^2", rep("N/mm^2",2))
 #   data <- .df.melt(data, "Species", units, metadata)
 #   return(data)
 # }
 
 # #similar issue for this as above.  I think it is the quotes in lat and long
 # .delaRiva.2015 <- function(...){
-#   data <- read.xls(ft_get_si('10.5061/dryad.dr275.2', 'Dryad_database.xls'), as.is=TRUE, sheet='Traits')  
+#   data <- read.xls(ft_get_si('10.5061/dryad.dr275.2', 'Dryad_database.xls'), as.is=TRUE, sheet='Traits')
 #   data$Species <- tolower(gsub(" ", "_", data$Species, ignore.case = TRUE))
 #   metadata <- data[,c(2:7)]
 #   data <- data[,-c(2:7)]
-#   units <- c("m", "m^2", "cm^2", "g^-1", "m^2 Kg^-1", "μg g^-1", "%", "%", "g^-1", "g cm^-3", "g g^-1", "m g^-1", rep("NA", 4), "Latitude", "Longitude")
+#   units <- c("m", "m^2", "cm^2", "g^-1", "m^2 Kg^-1", "μg g^-1", "%", "%", "g^-1", "g cm^-3", "g g^-1", "m g^-1")
 #   data <- .df.melt(data, "Species", units, metadata)
 #   return(data)
 # }
